@@ -1,0 +1,12 @@
+*.pyc
+*.pyd
+__pycache__
+.mypy_cache
+.vscode
+.idea
+.pytest_cache
+*.log
+*.db
+.coverage
+gen
+.DS_Store
