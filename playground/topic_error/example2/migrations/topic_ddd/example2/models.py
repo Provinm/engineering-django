@@ -8,9 +8,6 @@ class PollRecord(models.Model):
     car_brand = models.CharField(max_length=100)
     created_time = models.DateTimeField(auto_now_add=True)
 
-    class Meta:
-        db_table = "topic_ddd_example2_pollrecord"
-
     @classmethod
     def poll(cls, email: str, brand: str) -> dict:
         if not email:

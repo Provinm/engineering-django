@@ -8,9 +8,6 @@ class Player(models.Model):
     region = models.CharField(max_length=255)
     balance = models.IntegerField(default=0)
 
-    class Meta:
-        db_table = "topic_ddd_example3_player"
-
     @classmethod
     def info(cls, player_id: int) -> dict:
         player = cls.objects.filter(id=player_id)
@@ -31,17 +28,11 @@ class Reward(models.Model):
     num = models.CharField(max_length=255)
     price = models.IntegerField()
 
-    class Meta:
-        db_table = "topic_ddd_example3_reward"
-
 
 class Purchase(models.Model):
     player_id = models.BigIntegerField()
     reward_id = models.BigIntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        db_table = "topic_ddd_example3_purchase"
 
     @classmethod
     def purchase(cls, player_id: int, reward_id: int) -> dict:
